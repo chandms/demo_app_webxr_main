@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Wackarmadiddle</title>
+    <meta name="description" content="Wackarmadiddle">
+    <script src="https://aframe.io/releases/1.4.0/aframe.min.js"></script>
+    
+
+    <script src="https://unpkg.com/super-hands@^3.0.3/dist/super-hands.min.js"></script>
+	<script src="https://unpkg.com/aframe-look-at-component@0.5.1/dist/aframe-look-at-component.min.js"></script> 
+	<script src="scripts_2.js"></script>
+  </head>
+  <body>
+    <a-scene background="color: #2090A0">
+      <a-assets>
+        <a-asset-item id="intro" src="intro.glb"></a-asset-item>
+        <a-asset-item id="intro-button" src="intro_button.glb"></a-asset-item>
+        <a-asset-item id="intro-exit" src="intro_exit.glb"></a-asset-item>
+		    <a-asset-item id="level" src="Level_28.glb"></a-asset-item>
+        <a-asset-item id="armadillo" src="armadillo.glb"></a-asset-item>
+        <img id="adimg" src="https://cdn.glitch.global/d91bc854-69cb-4c3f-a7ee-e76fec278982/ad.jpg?v=1706119391449"/>
+		    <img id="restimg" src="https://cdn.glitch.global/d91bc854-69cb-4c3f-a7ee-e76fec278982/Flat_restart_icon.png?v=1706119397147"/>
+        <img id="ad_mcd" src="images/ad_mcd.jpeg"/>
+        <img id="ad_car" src="images/ad_car.jpeg"/>
+        <img id="banner" src="images/banner.jpeg"/>
+        <img id="shoe" src="images/shoe_smaller_ad.png"/>
+        <img id="jerry" src="images/jerry.jpeg"/>
+        <img id="gui" src="images/gui_bg.jpg"/>
+        <img id="door1" src="images/door1.png"/>
+        <img id="door2" src="images/door2.png"/>
+        
+        <audio id="giggle" crossorigin="anonymous" src="https://cdn.glitch.global/1b4ef9e1-094f-455c-87ce-3be017b7377b/giggle.ogg?v=1695933140566"></audio>
+        <audio id="whack" crossorigin="anonymous" src="https://cdn.glitch.global/1b4ef9e1-094f-455c-87ce-3be017b7377b/whack.ogg?v=1695933146141"></audio>
+        
+        <a-mixin
+          id="frame"
+          geometry="primitive: plane; width: 0.5783552; height: 0.8192"
+          material="color: white; shader: flat"
+          animation__scale="property: scale; to: 1.2 1.2 1.2; dur: 200; startEvents: mouseenter"
+          animation__scale_reverse="property: scale; to: 1 1 1; dur: 200; startEvents: mouseleave"
+         ></a-mixin>
+        <a-mixin
+          id="poster"
+          geometry="primitive: plane; width: 0.544768; height: 0.786432"
+          material="color: white; shader: flat"
+          position="0 0 0.005"
+         ></a-mixin>
+
+      </a-assets>
+      
+    <a-entity camera look-controls position="0 1.6 0" id="cam">
+      <a-entity cursor="fuse: true; fuseTimeout: 1500"
+                position="0 0 -1"
+                id = "gazeCursor"
+                raycaster="objects: .raycastable"
+                geometry="primitive: ring; radiusInner: 0.02; radiusOuter: 0.03"
+                material="color: black; shader: flat">
+      </a-entity>
+    </a-entity>
+      <!-- <a-entity id="leftHand"  laser-controls="hand: left;" raycaster="objects: .raycastable" log-oculus-button></a-entity>
+      <a-entity id="rightHand"  laser-controls="hand: right;" raycaster="objects: .raycastable" line="color: #118A7E" log-oculus-button></a-entity> -->
+      
+        <a-entity game-manager exit-red></a-entity>
+        <a-gltf-model src="#level"></a-gltf-model>
+        <a-gltf-model id="intro-logo" src="#intro" position="-1 0 0"></a-gltf-model>
+      
+        <a-image id="msg" position="2 1.2 -1.5" scale="0.5 0.5 0.5" rotation="0 -45 0" src="#banner" visible="false" class="raycastable">
+          <a-text value="Started" position="-0.5 0.1 1" scale="1 1 1" color="black"></a-text>
+          <a-text value="Started" position="-0.51 0.1 1" scale="1 1 1" color="black"></a-text>
+        </a-image>
+
+        <a-box id="btn1"
+            position="-2 1.2 -1.5"
+            color="#4CAF50"
+            depth="0.1" height="0.5" width="0.3"
+            class="raycastable">
+        <!-- <a-image src="#door1" position="0.3 0.08 0.3" scale="0.5 0.4 0.5"></a-image> -->
+        <!-- <a-text value="Go to \nHomepage" align="center" position="0.35 0.08 0.3" scale="0.2 0.2 0.2"></a-text> -->
+        
+      </a-box>
+      <a-image src="#door2" position="-1.95 1.2 -1.4" scale="0.5 0.4 0.5">
+        <a-text value="Go to \nHomepage" align="center" position="0 0 0" scale="0.4 0.4 0.4"></a-text>
+      </a-image>
+
+      <a-torus 
+      radius="0.5" 
+      radius-tubular="0.02"
+      segments-tubular="20"
+      segments-radial="8"
+      position="-2 1.2 -1.5"
+      rotation="0 0 0"
+      material="color: #7F00FF; side: double; metalness: 0.8"
+      scale="0.5 1 0.5">
+      </a-torus>
+
+
+        <a-sound id="giggle-sound" src="#giggle" position="0 1 0"></a-sound>
+ 	      <a-sound id="whack-sound" src="#whack" position="0 1 0"></a-sound>
+
+
+      <a-text timer="false" id="timer" value="0:20" align="center" position="0.302 2.085 -2.450" color="black" scale="3 3 3"></a-text>
+      <a-text id="score" value="Score: 0" align="center" position="0.302 2.7 -2.450" color="black" scale="2 2 2" rotation="0 0 0"></a-text>
+      
+      <a-entity id="armadillo-parent" scale="4 4 4"></a-entity>
+	  
+	    <a-entity id="origin"></a-entity>
+      <a-entity start-place adv-vis></a-entity>
+      <a-entity scan-elements log-data log-cam></a-entity>
+      <script>
+        // Redirect logic
+        document.querySelector('#btn1').addEventListener('click', () => {
+          window.location.href = 'index.html';
+        });
+      </script>
+    </a-scene>
+  </body>
+  
+  
+</html>
