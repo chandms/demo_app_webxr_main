@@ -474,7 +474,7 @@ AFRAME.registerComponent('exit-red',{
     scene.addEventListener('exit-vr',function(ev, target){
       
       window.location.replace(
-        "https://chandms.github.io/demo_app_webxr_other/home_2.html?score="+score
+        "https://chandms.github.io/demo_app_webxr_other/gaze_based.html?score="+score
       );
             
       
