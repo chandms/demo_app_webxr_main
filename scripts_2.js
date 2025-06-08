@@ -484,7 +484,7 @@ AFRAME.registerComponent('exit-red',{
   tick: function(){
     
        
-       if(sc_timer%600==0){
+       if(sc_timer%300==0){
        
     
     // `screenshot.projection` property can be `equirectangular` or `perspective`.
@@ -864,7 +864,7 @@ AFRAME.registerComponent('timer', {
 		}
 		if(timer <= 0 && gameStarted){
 
-      if(count_play>=2){
+      if(count_play>=1){
         createDistraction();
       }
 
