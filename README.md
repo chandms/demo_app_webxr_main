@@ -1,6 +1,8 @@
 App applying [Visual Overlapping, Sequential Rendering, Malvertising, GUI Switch](https://chandms.github.io/files/2025_mobisys_demo.pdf)
 
-[Access the main app](https://chandms.github.io/demo_app_webxr_main/)
+[Access the controller app](https://chandms.github.io/demo_app_webxr_main/controller_based.html)
+
+[Access the gaze app](https://chandms.github.io/demo_app_webxr_main/gaze_based.html)
 
 # Credits
 
