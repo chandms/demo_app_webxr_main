@@ -357,7 +357,7 @@ AFRAME.registerComponent('log-data',{
          console.log("Exit VR");
       
          content+="Exit VR: time: "+Date.now()+"\n";
-         downloadFile(content);
+         //downloadFile(content);
 
       });
     
