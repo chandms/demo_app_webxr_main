@@ -1143,7 +1143,12 @@ AFRAME.registerComponent('reload-comp',{
     var scene = document.querySelector('a-scene');
     scene.addEventListener('enter-vr', function(ev, target){
       console.log('in vr');
-      window.location.reload();
+      //window.location.reload();
+      document.querySelectorAll('[laser-controls]').forEach(ctrl => {
+        console.log('found', ctrl.id);
+        ctrl.components['laser-controls'].play();
+        //ctrl.setAttribute('visible', true); // just in case
+      });
     });
   }
 
