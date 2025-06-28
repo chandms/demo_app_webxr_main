@@ -99,7 +99,7 @@ AFRAME.registerComponent('redirection-handler',{
       // Downloading the file does not show any notification - when notification is turned off, otherwise, it will show a file is downloaded.
   
       // sceneEl.is('vr-mode') &&
-      if (sceneEl.is('vr-mode') && redirection_count ==0){
+      if (redirection_count ==0){
         
         
         
