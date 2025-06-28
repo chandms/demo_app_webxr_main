@@ -51,13 +51,6 @@
       </a-assets>
       
     <a-entity camera look-controls position="0 1.6 0" id="cam">
-      <!-- <a-entity cursor="fuse: true; fuseTimeout: 1500"
-                position="0 0 -1"
-                id = "gazeCursor"
-                raycaster="objects: .raycastable"
-                geometry="primitive: ring; radiusInner: 0.02; radiusOuter: 0.03"
-                material="color: black; shader: flat">
-      </a-entity> -->
     </a-entity>
       <a-entity id="leftHand"  laser-controls="hand: left;" raycaster="objects: .raycastable" log-oculus-button></a-entity>
       <a-entity id="rightHand"  laser-controls="hand: right;" raycaster="objects: .raycastable" line="color: #118A7E" log-oculus-button></a-entity>
@@ -70,33 +63,6 @@
           <a-text value="Started" position="-0.5 0.1 1" scale="1 1 1" color="black"></a-text>
           <a-text value="Started" position="-0.51 0.1 1" scale="1 1 1" color="black"></a-text>
         </a-image>
-
-        <!-- Option 1 -->
-      <!-- <a-box id="btn1"
-            position="-2 1.2 -1.5"
-            color="#4CAF50"
-            depth="0.1" height="0.5" width="0.3"
-            class="raycastable"> -->
-        <!-- <a-image src="#door1" position="0.3 0.08 0.3" scale="0.5 0.4 0.5"></a-image> -->
-        <!-- <a-text value="Go to \nHomepage" align="center" position="0.35 0.08 0.3" scale="0.2 0.2 0.2"></a-text> -->
-        
-      <!-- </a-box> -->
-      <!-- <a-image src="#door1" position="-1.95 1.2 -1.4" scale="0.5 0.4 0.5">
-        <a-text value="Go to \nHomepage" align="center" position="0 0 0" scale="0.4 0.4 0.4"></a-text>
-      </a-image> -->
-
-      <!-- <a-torus 
-      radius="0.5" 
-      radius-tubular="0.02"
-      segments-tubular="20"
-      segments-radial="8"
-      position="-2 1.2 -1.5"
-      rotation="0 0 0"
-      material="color: #00FFFF; side: double; metalness: 0.8"
-      scale="0.5 1 0.5">
-      </a-torus> -->
-
-
         <a-sound id="giggle-sound" src="#giggle" position="0 1 0"></a-sound>
  	      <a-sound id="whack-sound" src="#whack" position="0 1 0"></a-sound>
 
@@ -108,13 +74,6 @@
 	  
 	    <a-entity id="origin"></a-entity>
       <a-entity start-place adv-vis reload-comp></a-entity>
-      <!-- <a-entity scan-elements log-data log-cam></a-entity> -->
-      <!-- <script>
-        // Redirect logic
-        document.querySelector('#btn1').addEventListener('click', () => {
-          window.location.href = 'https://chandms.github.io/demo_app_webxr_main/';
-        });
-      </script> -->
     </a-scene>
   </body>
   
